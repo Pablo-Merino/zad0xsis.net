@@ -1,4 +1,16 @@
 $(document).ready(function(){
+  $.routes({
+        '/posts/:id': function(params){
+          getJSONPosts();
+          $('#blogbox').slideDown(150, function() {
+            $('html, body').animate({ scrollTop: $("#post"+params.id).offset().top}, 500);
+
+
+
+          });
+          //alert("lulz "+params.id);
+        }
+      });
   $('#contact').click(function(){
     $('#cbox').slideToggle(150, function() {
       $('#tbox').slideUp(200);
@@ -69,7 +81,7 @@ $(document).ready(function(){
         });
       });
     }});    
-    getJSONPosts();
+    
   });
 
 function getJSONPosts() {
@@ -78,7 +90,7 @@ function getJSONPosts() {
     $('#blogbox #posts').html('<hr />');
 
     $.each(parsed, function(index, value){
-      $('#posts').append("<h1>"+parsed[index].title+"</h1><h3>By "+parsed[index].author+" on "+parsed[index].date+"</h3><p>"+parsed[index].body+"<a href=\"mailto:comments@zad0xsis.net\" id=\"commenta\">Comments to comments@zad0xsis.net</a><hr />");
+      $('#posts').append("<div id=\"post"+index+"\"><h1>"+parsed[index].title+"</h1><h3>By "+parsed[index].author+" on "+parsed[index].date+"</h3><p>"+parsed[index].body+"<a href=\"mailto:comments@zad0xsis.net\" id=\"commenta\">Comments to comments@zad0xsis.net</a><a href=\"https://twitter.com/share?text='"+parsed[index].title+"' on @zad0xsis blog: http://zad0xsis.net/#/posts"+index+"\" class=\"twitter-share-button\" data-count=\"none\" data-lang=\"en\">Tweet</a><script type=\"text/javascript\" src=\"//platform.twitter.com/widgets.js\"></script></div><hr />");
     });
       //$('#posts').html(parsed[0].title);
       //alert('Load was performed.');

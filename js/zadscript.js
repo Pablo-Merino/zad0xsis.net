@@ -25,6 +25,23 @@ $(document).ready(function(){
             $('#mtbox').slideUp(200);
             $('#blogbox').slideUp(200);
           });
+        }, 
+        '/twitter':function(){
+          $('#tbox').slideToggle(150, function() {
+            $('#cbox').slideUp(200);
+            $('#abtbox').slideUp(200);
+            $('#mtbox').slideUp(200);
+            $('#blogbox').slideUp(200);
+          });
+        }, 
+        '/mythings':function() {
+          $('#mtbox').slideToggle(150, function() {
+            $('#tbox').slideUp(200);
+            $('#cbox').slideUp(200);
+            $('#abtbox').slideUp(200);
+            $('#blogbox').slideUp(200);
+
+          });
         }
       });
   $('#contact').click(function(){

@@ -53,6 +53,27 @@ $(document).ready(function(){
             $('#mtbox').slideUp(200);
 
           });
+        },
+        '/sopa':function(){
+          $("#sopa").modal({overlayClose:true, overlayCss: {backgroundColor:"#000"}, 
+            onClose: function (dialog) {
+              dialog.data.fadeOut('fast', function () {
+                dialog.container.fadeOut('fast', function () {
+                  dialog.overlay.fadeOut('fast', function () {
+                    $.modal.close();
+                  });
+                });
+              });
+
+            },
+            onOpen: function (dialog) {
+              dialog.overlay.fadeIn('fast', function () {
+                dialog.data.hide();
+                dialog.container.fadeIn('fast', function () {
+                  dialog.data.fadeIn('fast');
+                });
+              });
+          }});
         }
       });
   /*$('#contact').click(function(){

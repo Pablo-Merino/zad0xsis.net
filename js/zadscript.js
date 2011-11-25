@@ -7,7 +7,7 @@ $(document).ready(function(){
             $('#cbox').slideUp(200);
             $('#abtbox').slideUp(200);
             $('#mtbox').slideUp(200);
-            $('html, body').animate({ scrollTop: $("#post"+params.id).offset().top}, 500);
+            //$('html, body').animate({ scrollTop: $("#post"+params.id).offset().top}, 500);
           });
         }
       });

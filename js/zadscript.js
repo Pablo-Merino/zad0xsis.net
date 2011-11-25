@@ -42,9 +42,20 @@ $(document).ready(function(){
             $('#blogbox').slideUp(200);
 
           });
+        },
+        '/blog':function() {
+          getJSONPosts();
+
+          $('#blogbox').slideToggle(150, function() {
+            $('#tbox').slideUp(200);
+            $('#cbox').slideUp(200);
+            $('#abtbox').slideUp(200);
+            $('#mtbox').slideUp(200);
+
+          });
         }
       });
-  $('#contact').click(function(){
+  /*$('#contact').click(function(){
     $('#cbox').slideToggle(150, function() {
       $('#tbox').slideUp(200);
       $('#abtbox').slideUp(200);
@@ -91,7 +102,7 @@ $(document).ready(function(){
       $('#mtbox').slideUp(200);
 
     });
-  });
+  });*/
 
   $('#subtitle').click(function(){
     //$("#sopa").modal({overlayClose:true, overlayCss: {backgroundColor:"#000", }});

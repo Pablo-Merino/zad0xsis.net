@@ -4,6 +4,7 @@ header('Server:	zad0xsis HTTPd');
 header('X-Powered-By: TinyBlog1.0');
 
 require_once('./blog/program/lib/functions.php');
+require "./blog/md.php";
 
 $content = array();
 
@@ -18,6 +19,7 @@ foreach ($dirlist as $file) {
 
 	$tagValue = array();
 	$tagValue = parse('./blog/posts/'.$file);
+	$tagValue['body'] = Markdown($tagValue['body']);
 	/*$content .= "<div id=\"box\">\n";
 	$content .="<h2><a href=\"?/viewpost/".$file_no_ext."/\">".$tagValue["title"]."</a></h2>\n";
 	$content .= "<h1>".$tagValue["date"]."</h1>\n";

@@ -7,7 +7,15 @@ $(document).ready(function(){
             $('#cbox').slideUp(200);
             $('#abtbox').slideUp(200);
             $('#mtbox').slideUp(200);
-            //$('html, body').animate({ scrollTop: $("#post"+params.id).offset().top}, 500);
+          });
+        },
+        '/about': function(params) {
+          $('#abtbox').slideToggle(150, function() {
+            $('#tbox').slideUp(200);
+            $('#cbox').slideUp(200);
+            $('#mtbox').slideUp(200);
+            $('#blogbox').slideUp(200);
+
           });
         }
       });
@@ -92,8 +100,6 @@ function getJSONPosts() {
     $.each(parsed, function(index, value){
       $('#posts').append("<div id=\"post"+index+"\"><h1>"+parsed[index].title+"</h1><h3>By "+parsed[index].author+" on "+parsed[index].date+"</h3><p>"+parsed[index].body+"<a href=\"mailto:comments@zad0xsis.net\" id=\"commenta\">Comments to comments@zad0xsis.net</a><a href=\"https://twitter.com/share?text='"+parsed[index].title+"' on @zad0xsis blog:&url=https://zad0xsis.net/#/posts/"+index+"\" class=\"twitter-share-button\">Tweet</a><script type=\"text/javascript\" src=\"https://platform.twitter.com/widgets.js\"></script></div><hr />");
     });
-      //$('#posts').html(parsed[0].title);
-      //alert('Load was performed.');
   });
 }
 });

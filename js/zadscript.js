@@ -2,11 +2,8 @@ $(document).ready(function(){
   $.routes({
         '/posts/:id': function(params){
           getJSONPosts();
-          $('#blogbox').slideDown(150, function() {
+          $('#blogbox').slideToggle(150, function() {
             $('html, body').animate({ scrollTop: $("#post"+params.id).offset().top}, 500);
-
-
-
           });
         }
       });

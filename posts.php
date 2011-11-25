@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/plain');
-header('Server:	zadhttpd 1.2');
-header('X-Powered-By: TinyBlog1.0');
+header('Server:	zadhttpd');
+header('X-Powered-By: TinyBlogAPI');
 header
 require_once('./blog/program/lib/functions.php');
 

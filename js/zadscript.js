@@ -9,13 +9,21 @@ $(document).ready(function(){
             $('#mtbox').slideUp(200);
           });
         },
-        '/about': function(params) {
+        '/about': function() {
           $('#abtbox').slideToggle(150, function() {
             $('#tbox').slideUp(200);
             $('#cbox').slideUp(200);
             $('#mtbox').slideUp(200);
             $('#blogbox').slideUp(200);
 
+          });
+        },
+        '/contact': function() {
+          $('#cbox').slideToggle(150, function() {
+            $('#tbox').slideUp(200);
+            $('#abtbox').slideUp(200);
+            $('#mtbox').slideUp(200);
+            $('#blogbox').slideUp(200);
           });
         }
       });

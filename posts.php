@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/plain');
 require_once('./blog/program/lib/functions.php');
 
 $content = array();

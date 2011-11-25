@@ -2,6 +2,7 @@
 header('Content-Type: text/plain');
 header('Server:	zad0xsis HTTPd');
 header('X-Powered-By: TinyBlog1.0');
+
 require_once('./blog/program/lib/functions.php');
 
 $content = array();

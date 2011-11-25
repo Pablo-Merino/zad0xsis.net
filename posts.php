@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/plain');
-header('Server:	zadhttpd');
+//header('Server:	zadhttpd');
 header('X-Powered-By: TinyBlogAPI');
 header
 require_once('./blog/program/lib/functions.php');

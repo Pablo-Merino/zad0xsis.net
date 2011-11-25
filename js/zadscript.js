@@ -3,6 +3,10 @@ $(document).ready(function(){
         '/posts/:id': function(params){
           getJSONPosts();
           $('#blogbox').slideToggle(150, function() {
+            $('#tbox').slideUp(200);
+            $('#cbox').slideUp(200);
+            $('#abtbox').slideUp(200);
+            $('#mtbox').slideUp(200);
             $('html, body').animate({ scrollTop: $("#post"+params.id).offset().top}, 500);
           });
         }

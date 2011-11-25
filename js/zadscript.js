@@ -2,7 +2,7 @@ $(document).ready(function(){
   $.routes({
         '/posts/:id': function(params){
           getJSONPosts();
-          $('#blogbox').slideToggle(150, function() {
+          $('#blogbox').slideDown(150, function() {
             $('#tbox').slideUp(200);
             $('#cbox').slideUp(200);
             $('#abtbox').slideUp(200);
@@ -90,7 +90,7 @@ function getJSONPosts() {
     $('#blogbox #posts').html('<hr />');
 
     $.each(parsed, function(index, value){
-      $('#posts').append("<div id=\"post"+index+"\"><h1>"+parsed[index].title+"</h1><h3>By "+parsed[index].author+" on "+parsed[index].date+"</h3><p>"+parsed[index].body+"<a href=\"mailto:comments@zad0xsis.net\" id=\"commenta\">Comments to comments@zad0xsis.net</a><a href=\"https://twitter.com/share?text='"+parsed[index].title+"' on @zad0xsis blog: \" class=\"twitter-share-button\" data-count=\"none\" data-lang=\"en\">Tweet</a><script type=\"text/javascript\" src=\"//platform.twitter.com/widgets.js\"></script></div><hr />");
+      $('#posts').append("<div id=\"post"+index+"\"><h1>"+parsed[index].title+"</h1><h3>By "+parsed[index].author+" on "+parsed[index].date+"</h3><p>"+parsed[index].body+"<a href=\"mailto:comments@zad0xsis.net\" id=\"commenta\">Comments to comments@zad0xsis.net</a><a href=\"https://twitter.com/share?text='"+parsed[index].title+"' on @zad0xsis blog: \" class=\"twitter-share-button\" data-count=\"none\" data-lang=\"en\">Tweet</a><script type=\"text/javascript\" src=\"https://platform.twitter.com/widgets.js\"></script></div><hr />");
     });
       //$('#posts').html(parsed[0].title);
       //alert('Load was performed.');

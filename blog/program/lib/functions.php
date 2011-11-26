@@ -81,13 +81,18 @@ function parse($value, $string=false) {
 	} else {
 	$lines = file($value);
 	}
-  	  	$content = array();
+  	$content = array();
   	foreach ($lines as $line) {
     	$posColon = strpos($line, ":");
    		$tag = strtolower(substr($line, 0, $posColon));
     	$body = substr($line, $posColon+1);
+    	if($tag != "Body" || $tag != "body") {
+    		$content[$tag] = trim($body);
 
-    	$content[$tag] = trim($body);
+    	} else {
+    		$content[$tag] = $body;
+
+    	}
   	}
   	return array_filter($content);
 }

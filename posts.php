@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/plain');
+header('Content-Type: application/json');
 header('Server:	zad0xsis HTTPd');
 header('X-Powered-By: TinyBlog1.0');
 

@@ -52,7 +52,30 @@
     </div>
     <div id="blogbox">
       <h3>TinyBlog&trade;</h3>
-      <div id="posts"><img src="./img/load.gif" alt="loader" /></div>
+      <div id="posts">
+      <hr />
+      <?php
+      include('./blog/blog.php');
+      if(count($posts['title']) != 1)  {
+        
+        for($i=0; $i<count($result['posts']['post']);$i++) {
+          echo "<!-- post $i --><div id=\"post\"><h1>".$posts[$i]['title']['value']."</h1>";
+          echo "<p>By ".$posts[$i]['author']['value']." on ".date("F d, Y", strtotime($posts[$i]['date']['value']))."</p>";
+          echo "<p>".Markdown($posts[$i]['content']['value'])."</p><a href=\"mailto:comments@zad0xsis.net\" id=\"commenta\">Comments to comments@zad0xsis.net</a><hr />";
+
+          echo "</div> <!-- post $i -->\n";
+
+        }
+      } else {
+          echo "<!-- post $i --><div id=\"post\"><h1>".$posts['title']['value']."</h1>";
+          echo "<p>By ".$posts['author']['value']." on ".date("F d, Y", strtotime($posts['date']['value']))."</p>";
+          echo "<p>".Markdown($posts['content']['value'])."</p><a href=\"mailto:comments@zad0xsis.net\" id=\"commenta\">Comments to comments@zad0xsis.net</a><hr />";
+
+          echo "</div> <!-- post $i -->\n";
+
+      }
+      ?>
+      </div>
     </div>
     <div id="sopa">
       <h1>SOPA is bad for me and you!</h1>

@@ -44,7 +44,6 @@ $(document).ready(function(){
           });
         },
         '/blog':function() {
-          getJSONPosts();
 
           $('#blogbox').slideToggle(150, function() {
             $('#tbox').slideUp(200);
@@ -128,15 +127,5 @@ $(document).ready(function(){
     
   });
 
-function getJSONPosts() {
-  $.get('./posts.php', function(data) {
-    var parsed = jQuery.parseJSON(data);
-    $('#blogbox #posts').html('<hr />');
-
-    $.each(parsed, function(index, value){
-      $('#posts').append("<div id=\"post"+index+"\"><h1>"+parsed[index].title+"</h1><h3>By "+parsed[index].author+" on "+parsed[index].date+"</h3><p>"+parsed[index].body+"<a href=\"mailto:comments@zad0xsis.net\" id=\"commenta\">Comments to comments@zad0xsis.net</a><a href=\"https://twitter.com/share?text='"+parsed[index].title+"' on @zad0xsis blog:&url=https://zad0xsis.net/#/posts/"+index+"\" class=\"twitter-share-button\">Tweet</a><script type=\"text/javascript\" src=\"https://platform.twitter.com/widgets.js\"></script></div><hr />");
-    });
-  });
-}
 });
 

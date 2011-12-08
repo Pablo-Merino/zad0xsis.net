@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<posts>
+	<post>
+		<title>Fully SSL compliant now</title>
+		<author>zad0xsis</author>
+		<date>11-11-25</date>
+		<content>Well, zad0xsis.net is now fully SSL working. Is SSLv3 compliant, thanks to [my friend Hunter](https://twitter.com/hunterhdolan). You all should give him a follow! :D</content>
+	</post>
+	<post>
+		<title>Welcome to my blog :)</title>
+		<author>zad0xsis</author>
+		<date>11-11-24</date>
+		<content>Hi! This is my redesigned zad0xsis.net page. Actually took me a while to make it like it is now. I'm also thinking about opensourcing it on my GitHub, but IDK still. The blog uses a modified core of [Bloggy](https://github.com/Studio182/Bloggy). Thanks and enjoy!</content>
+	</post>
+
+
+</posts>

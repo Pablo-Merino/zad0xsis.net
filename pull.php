@@ -2,7 +2,7 @@
 
 $payload = json_decode(stripslashes($_POST['payload']));
 
-$password = "a difficult password which you have to enter on the get variable ?pass on github pull hook";
+$password = "a difficult password which you have to enter on the get variable ?pass on github pull hook (this one must be sha1'ed)";
 
 if($_GET['pass'] == sha1($password)) {
 	if($payload->ref === 'refs/heads/master') {
